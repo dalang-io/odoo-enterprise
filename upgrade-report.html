@@ -1,0 +1,1160 @@
+
+<html>
+<head>
+      <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+      <style>
+      body {
+            font-family: 'Roboto', sans-serif;
+      }
+      h1 {
+            padding: 20px 0;
+            width: 100%;
+            text-align: center;
+            background-color: #875A7B;
+            color: white;
+      }
+      h2 {
+            color: #875A7B;
+      }
+      </style>
+</head>
+<body>
+      <h1> Odoo upgrade report</h1>
+      <p>Here is the report generated during your database upgrade.</p>
+      <p>Please, read it <strong>carefully</strong>.</p>
+      <h2> Congratulations, you have just upgraded to Odoo 15.0 </h2>
+  <p> Here are changes that may impact day to day flows in this new version. </p>
+  <p>Want to know more? Check out the full functional <a href="https://www.odoo.com/odoo-15-release-notes">release note</a>.</p>
+  <br>
+    <h3>Disabled views</h3>
+    <ul>
+        <li><details>
+          <summary>
+            The below custom views have been disabled during the migration because they were no longer valid.
+          </summary>
+          <ul>
+            <li>
+                  <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=2427">/website/static/src/scss/options/colors/user_color_palette.custom.web.assets_common.scss</a>
+            </li>
+            <li>
+                  <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=2806">Odoo Studio: project.task.form customization</a>
+            </li>
+            <li>
+                  <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=3260">Odoo Studio: project.task.tree customization</a>
+            </li>
+            <li>
+                  <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=3493">view.move.form.inherit</a>
+            </li>
+            <li>
+                  <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=3452">helpdesk.ticket.view.form.inherit</a>
+            </li>
+            <li>
+                  <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=3126">Odoo Studio: project.project.form customization</a>
+            </li>
+            <li>
+                  <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=3239">Odoo Studio: hr.leave.allocation.view.form customization</a>
+            </li>
+            <li>
+                  <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=3255">Odoo Studio: crm.lead.list.activities customization</a>
+            </li>
+            <li>
+                  <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=3496">Odoo Studio: hr.leave.view.form.manager customization</a>
+            </li>
+            <li>
+                  <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=3454">account.analytic.line.form.inherit</a>
+            </li>
+          </ul>
+        </details></li>
+    </ul>
+    <h3>JS/CSS Assets</h3>
+    <ul>
+          <li>
+        <details>
+            <summary>
+            In Odoo 15.0 web assets from custom modules must be declared using the
+            new model 'ir.asset', done in the module's manifest.
+            The following modules include asset views that should be declared according to the new standard.
+            Please make sure your assets are moved out of the views and your modules' manifests have an "assets"
+            key to define the desired bundles of each asset.
+            Follow <a href="https://www.odoo.com/documentation/15.0/developer/reference/frontend/assets.html">this guide</a> for more details on how assets should be managed.
+            Once all assets are defined in the manifests, the 'ir.asset' records created
+            during the upgrade can be removed.
+            </summary>
+            <ul><li>Module: bryntum_gantt_enterprise, XML name: assets_backend, View name: im assets, Assigned bundle: web.assets_backend.</li><li>Module: bryntum_gantt_enterprise, XML name: assets_backend_css, View name: im assets css, Assigned bundle: web.assets_backend.</li><li>Module: project_dashboard_odoo, XML name: assets_dashboard, View name: Hr Dashboard assets, Assigned bundle: web.assets_backend.</li><li>Module: rowno_in_tree, XML name: assets_backend, View name: rowno_in_tree assets, Assigned bundle: web.assets_backend.</li><li>Module: web_ir_actions_act_multi, XML name: assets_backend, View name: web_ir_actions_act_multi assets, Assigned bundle: web.assets_backend.</li><li>Module: web_ir_actions_act_view_reload, XML name: assets_backend, View name: web_ir_actions_act_view_reload assets, Assigned bundle: web.assets_backend.</li><li>Module: whatsapp_mail_messaging, XML name: assets_backend, View name: systray_new_icon, Assigned bundle: web.assets_backend.</li><li>Module: whatsapp_mail_messaging, XML name: whatsapp_assets, View name: Website Whatsapp, Assigned bundle: web.assets_frontend.</li></ul>
+        <details>
+        </details></details></li>
+    </ul>
+    <h3>Discuss</h3>
+    <ul>
+          <li>
+        <p><strong>PLEASE NOTE:</strong></p>
+        <p>
+            Mass mailing channels are no longer displayed in the Discuss app
+            by default starting from Odoo 15.0. <br>
+            They become mail groups and are moved to <a href="http://localhost:8069/groups">http://localhost:8069/groups</a>, where you can
+            subscribe and follow discussions. <br>
+            If you prefer to keep a channel in the Discuss app after the upgrade, go to the channel
+            settings and uncheck the "send messages by email" option.
+        </p>
+        </li>
+    </ul>
+    <h3>Other</h3>
+    <ul>
+          <li><details><summary>
+            Due to the migration to the new system of accruals,
+            the previous accrual allocations have been converted into regular allocations.
+            Your employees have been granted the corresponding amount of hours.
+            Please be aware that the previous accruals are no longer valid.
+            You have to create new plans, link new allocations to those plans,
+            and assign them to your employees in order to be effective.
+        </summary>
+        <table border="1" cellspacing="0" cellpadding="4">
+            <tr><th><b>id</b></th><th><b>private_name</b></th><th><b>employee_id</b></th><th><b>accrual_limit</b></th><th><b>number_per_interval</b></th><th><b>interval_number</b></th><th><b>unit_per_interval</b></th><th><b>interval_unit</b></th></tr>
+            <tr><td>184</td><td>Masrowaty Rebecca Simamora</td><td>59</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>186</td><td>Nadya Windy Anggraeni</td><td>62</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>34</td><td>Cuti Tahunan - Veronica Angelia</td><td>2</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>39</td><td>Cuti Tahunan - Aditya Demas Kristiawan</td><td>15</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>40</td><td>Cuti Tahunan - Ary Dwi Wahyu Rahmasari</td><td>16</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>180</td><td>Andro Yudi Sutardjo</td><td>32</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>22</td><td>Cuti Tahunan - Made Putri Cintya W.</td><td>14</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>43</td><td>Cuti Tahunan - Bayu Rahman Alwi</td><td>19</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>42</td><td>Cuti Tahunan - Reza Darmawan</td><td>18</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>154</td><td>Cuti Anak Sakit masuk RS</td><td>15</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>weeks</td></tr><tr><td>182</td><td>Ainaya Syahrani Aura Fitrothania</td><td>57</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>170</td><td>Cuti Tahunan - Wahyu Ramadhan</td><td>25</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>38</td><td>Cuti Tahunan - Muhammad Imam Husyaeni</td><td>12</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>183</td><td>Tasa Nurdio Crismonik</td><td>58</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>37</td><td>Cuti Tahunan - Fidi Arya Armidi</td><td>5</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>29</td><td>Cuti Tahunan - Moh. Husain Syahriar</td><td>11</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>36</td><td>Cuti Tahunan - Egy Rinaldi</td><td>13</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>33</td><td>Cuti Tahunan - Silvia Nilam Aprila Putri</td><td>8</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>25</td><td>Cuti Tahunan - Joseph Arimatea</td><td>1</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>185</td><td>Inggil Muliyawati</td><td>60</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>187</td><td>Indah Sofyani</td><td>63</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>41</td><td>Cuti Tahunan - Angela Samaeri Nazara</td><td>17</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>23</td><td>Cuti Tahunan - Agus Kurniawan</td><td>3</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>35</td><td>Cuti Tahunan - Ginanjar Jati Kintayari</td><td>4</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>166</td><td>Cuti Tahunan - Dinar Sumarginingrum</td><td>35</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>177</td><td>Cuti Tahunan - Nayla Syafwa Edison</td><td>56</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>171</td><td>Cuti Tahunan - Canda Dikadana</td><td>24</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>168</td><td>Cuti Tahunan - Ignasia Febrianti Sinurat</td><td>31</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>27</td><td>Cuti Tahunan - Jessica</td><td>9</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>178</td><td>Cuti Tahunan - Adelia Rahmadian</td><td>55</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>172</td><td>Cuti Tahunan - M. Yunus Damong</td><td>26</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>140</td><td>Cuti Tahunan - Acik Ridwan</td><td>22</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>167</td><td>Cuti Tahunan - Kinanthy Wulandari Hardika</td><td>45</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr><tr><td>169</td><td>Cuti Tahunan - David Harefa</td><td>46</td><td>0</td><td>1.0</td><td>1</td><td>days</td><td>months</td></tr>
+        </table>
+        </details>
+        </li>
+    </ul>
+    <h3>Human Resources</h3>
+    <ul>
+          <li>
+        <details>
+            <summary>
+            Due to an invalid configuration of leaves the following allocations had to be created.
+            </summary>
+            <ul><li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=189">Correction: Missing Allocation for Silvia Nilam Aprila Putri</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=190">Correction: Missing Allocation for Muhammad Yunus Damong</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=191">Correction: Missing Allocation for Wahyu Ramadhan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=192">Correction: Missing Allocation for Acik Ridwan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=193">Correction: Missing Allocation for Adelia Rahmadian</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=194">Correction: Missing Allocation for Ainaya Syahrani Aura Fitrothania</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=195">Correction: Missing Allocation for Andro Yudi Sutardjo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=196">Correction: Missing Allocation for Canda Dikadana</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=197">Correction: Missing Allocation for David Harefa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=198">Correction: Missing Allocation for Ignasia Febrianti Sinurat</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=199">Correction: Missing Allocation for Inggil Muliyawati</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=200">Correction: Missing Allocation for Canda Dikadana</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=201">Correction: Missing Allocation for David Harefa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=202">Correction: Missing Allocation for Muhammad Yunus Damong</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=203">Correction: Missing Allocation for Nadya Windy Anggraeni</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=204">Correction: Missing Allocation for Tasa Nurdio Crismonik</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=205">Correction: Missing Allocation for Wahyu Ramadhan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=206">Correction: Missing Allocation for Acik Ridwan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=207">Correction: Missing Allocation for Ignasia Febrianti Sinurat</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=208">Correction: Missing Allocation for Acik Ridwan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=209">Correction: Missing Allocation for Adelia Rahmadian</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=210">Correction: Missing Allocation for Ainaya Syahrani Aura Fitrothania</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=211">Correction: Missing Allocation for Andro Yudi Sutardjo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=212">Correction: Missing Allocation for Meeting pagi internal</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=213">Correction: Missing Allocation for Masrowaty Rebecca Simamora</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=214">Correction: Missing Allocation for Meeting pagi internal</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=215">Correction: Missing Allocation for Inggil Muliyawati</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=216">Correction: Missing Allocation for Muhammad Yunus Damong</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=217">Correction: Missing Allocation for Masrowaty Rebecca Simamora</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=218">Correction: Missing Allocation for Masrowaty Rebecca Simamora</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=219">Correction: Missing Allocation for Acik Ridwan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=220">Correction: Missing Allocation for Adelia Rahmadian</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=221">Correction: Missing Allocation for Ainaya Syahrani Aura Fitrothania</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=222">Correction: Missing Allocation for Andro Yudi Sutardjo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=223">Correction: Missing Allocation for Acik Ridwan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=224">Correction: Missing Allocation for Adelia Rahmadian</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=225">Correction: Missing Allocation for Meeting pagi internal</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=226">Correction: Missing Allocation for Ainaya Syahrani Aura Fitrothania</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=227">Correction: Missing Allocation for Andro Yudi Sutardjo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=228">Correction: Missing Allocation for Canda Dikadana</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=229">Correction: Missing Allocation for David Harefa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=230">Correction: Missing Allocation for Ignasia Febrianti Sinurat</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=231">Correction: Missing Allocation for Inggil Muliyawati</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=232">Correction: Missing Allocation for Canda Dikadana</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=233">Correction: Missing Allocation for David Harefa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=234">Correction: Missing Allocation for Ignasia Febrianti Sinurat</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=235">Correction: Missing Allocation for Nadya Windy Anggraeni</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=236">Correction: Missing Allocation for Tasa Nurdio Crismonik</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=237">Correction: Missing Allocation for Wahyu Ramadhan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=238">Correction: Missing Allocation for Muhammad Yunus Damong</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=239">Correction: Missing Allocation for Nadya Windy Anggraeni</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=240">Correction: Missing Allocation for Tasa Nurdio Crismonik</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=241">Correction: Missing Allocation for Wahyu Ramadhan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=242">Correction: Missing Allocation for Canda Dikadana</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=243">Correction: Missing Allocation for David Harefa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=244">Correction: Missing Allocation for Ignasia Febrianti Sinurat</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=245">Correction: Missing Allocation for Inggil Muliyawati</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=246">Correction: Missing Allocation for Muhammad Yunus Damong</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=247">Correction: Missing Allocation for Nadya Windy Anggraeni</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=248">Correction: Missing Allocation for Tasa Nurdio Crismonik</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=249">Correction: Missing Allocation for Wahyu Ramadhan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=250">Correction: Missing Allocation for Masrowaty Rebecca Simamora</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=251">Correction: Missing Allocation for Meeting pagi internal</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=252">Correction: Missing Allocation for Masrowaty Rebecca Simamora</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=253">Correction: Missing Allocation for Meeting pagi internal</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=254">Correction: Missing Allocation for Acik Ridwan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=255">Correction: Missing Allocation for Adelia Rahmadian</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=256">Correction: Missing Allocation for Ainaya Syahrani Aura Fitrothania</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=257">Correction: Missing Allocation for Andro Yudi Sutardjo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=258">Correction: Missing Allocation for Canda Dikadana</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=259">Correction: Missing Allocation for David Harefa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=260">Correction: Missing Allocation for Ignasia Febrianti Sinurat</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=261">Correction: Missing Allocation for Inggil Muliyawati</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=262">Correction: Missing Allocation for Muhammad Yunus Damong</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=263">Correction: Missing Allocation for Nadya Windy Anggraeni</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=264">Correction: Missing Allocation for Tasa Nurdio Crismonik</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=265">Correction: Missing Allocation for Wahyu Ramadhan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=266">Correction: Missing Allocation for Acik Ridwan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=267">Correction: Missing Allocation for Adelia Rahmadian</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=268">Correction: Missing Allocation for Ainaya Syahrani Aura Fitrothania</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=269">Correction: Missing Allocation for Andro Yudi Sutardjo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=270">Correction: Missing Allocation for Acik Ridwan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=271">Correction: Missing Allocation for Adelia Rahmadian</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=272">Correction: Missing Allocation for Ainaya Syahrani Aura Fitrothania</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=273">Correction: Missing Allocation for Andro Yudi Sutardjo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=274">Correction: Missing Allocation for Canda Dikadana</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=275">Correction: Missing Allocation for David Harefa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=276">Correction: Missing Allocation for Ignasia Febrianti Sinurat</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=277">Correction: Missing Allocation for Inggil Muliyawati</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=278">Correction: Missing Allocation for Canda Dikadana</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=279">Correction: Missing Allocation for David Harefa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=280">Correction: Missing Allocation for Ignasia Febrianti Sinurat</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=281">Correction: Missing Allocation for Inggil Muliyawati</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=282">Correction: Missing Allocation for Muhammad Yunus Damong</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=283">Correction: Missing Allocation for Nadya Windy Anggraeni</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=284">Correction: Missing Allocation for Tasa Nurdio Crismonik</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=285">Correction: Missing Allocation for Wahyu Ramadhan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=286">Correction: Missing Allocation for Muhammad Yunus Damong</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=287">Correction: Missing Allocation for Nadya Windy Anggraeni</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=288">Correction: Missing Allocation for Tasa Nurdio Crismonik</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=289">Correction: Missing Allocation for Wahyu Ramadhan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=290">Correction: Missing Allocation for Masrowaty Rebecca Simamora</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=291">Correction: Missing Allocation for Masrowaty Rebecca Simamora</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=292">Correction: Missing Allocation for Meeting pagi internal</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=293">Correction: Missing Allocation for Meeting pagi internal</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=294">Correction: Missing Allocation for Acik Ridwan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=295">Correction: Missing Allocation for Adelia Rahmadian</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=296">Correction: Missing Allocation for Ainaya Syahrani Aura Fitrothania</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=297">Correction: Missing Allocation for Andro Yudi Sutardjo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=298">Correction: Missing Allocation for Canda Dikadana</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=299">Correction: Missing Allocation for David Harefa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=300">Correction: Missing Allocation for Ignasia Febrianti Sinurat</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=301">Correction: Missing Allocation for Inggil Muliyawati</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=302">Correction: Missing Allocation for Muhammad Yunus Damong</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=303">Correction: Missing Allocation for Nadya Windy Anggraeni</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=304">Correction: Missing Allocation for Tasa Nurdio Crismonik</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=305">Correction: Missing Allocation for Wahyu Ramadhan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=306">Correction: Missing Allocation for Masrowaty Rebecca Simamora</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=307">Correction: Missing Allocation for Meeting pagi internal</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=308">Correction: Missing Allocation for Masrowaty Rebecca Simamora</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=309">Correction: Missing Allocation for Acik Ridwan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=310">Correction: Missing Allocation for Adelia Rahmadian</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=311">Correction: Missing Allocation for Ainaya Syahrani Aura Fitrothania</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=312">Correction: Missing Allocation for Andro Yudi Sutardjo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=313">Correction: Missing Allocation for Canda Dikadana</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=314">Correction: Missing Allocation for David Harefa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=315">Correction: Missing Allocation for Ignasia Febrianti Sinurat</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=316">Correction: Missing Allocation for Inggil Muliyawati</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=317">Correction: Missing Allocation for Muhammad Yunus Damong</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=318">Correction: Missing Allocation for Nadya Windy Anggraeni</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=319">Correction: Missing Allocation for Tasa Nurdio Crismonik</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=320">Correction: Missing Allocation for Wahyu Ramadhan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=321">Correction: Missing Allocation for Meeting pagi internal</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=322">Correction: Missing Allocation for Acik Ridwan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=323">Correction: Missing Allocation for Adelia Rahmadian</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=324">Correction: Missing Allocation for Ainaya Syahrani Aura Fitrothania</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=325">Correction: Missing Allocation for Andro Yudi Sutardjo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=326">Correction: Missing Allocation for Canda Dikadana</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=327">Correction: Missing Allocation for David Harefa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=328">Correction: Missing Allocation for Ignasia Febrianti Sinurat</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=329">Correction: Missing Allocation for Inggil Muliyawati</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=330">Correction: Missing Allocation for Muhammad Yunus Damong</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=331">Correction: Missing Allocation for Nadya Windy Anggraeni</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=332">Correction: Missing Allocation for Tasa Nurdio Crismonik</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=333">Correction: Missing Allocation for Wahyu Ramadhan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=334">Correction: Missing Allocation for Masrowaty Rebecca Simamora</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=335">Correction: Missing Allocation for Meeting pagi internal</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=336">Correction: Missing Allocation for Acik Ridwan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=337">Correction: Missing Allocation for Adelia Rahmadian</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=338">Correction: Missing Allocation for Ainaya Syahrani Aura Fitrothania</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=339">Correction: Missing Allocation for Andro Yudi Sutardjo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=340">Correction: Missing Allocation for Canda Dikadana</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=341">Correction: Missing Allocation for David Harefa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=342">Correction: Missing Allocation for Ignasia Febrianti Sinurat</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=343">Correction: Missing Allocation for Inggil Muliyawati</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=344">Correction: Missing Allocation for Muhammad Yunus Damong</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=345">Correction: Missing Allocation for Nadya Windy Anggraeni</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=346">Correction: Missing Allocation for Tasa Nurdio Crismonik</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=347">Correction: Missing Allocation for Wahyu Ramadhan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=348">Correction: Missing Allocation for Masrowaty Rebecca Simamora</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=349">Correction: Missing Allocation for Meeting pagi internal</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=350">Correction: Missing Allocation for Purwaningrum</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=351">Correction: Missing Allocation for Purwaningrum</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=hr.leave.allocation&amp;action=&amp;id=352">Correction: Missing Allocation for David Harefa</a></li></ul>
+        </details>
+        </li>
+    </ul>
+    <h3>Accounting</h3>
+    <ul>
+          <li>Some journals were using the same short codes. Since this is not allowed anymore, a unique short code has been computed for them. The sequences of their entries stay unchanged, you can change them manually if you wish to.</li>
+    </ul>
+    <h3>Stock</h3>
+    <ul>
+          <li>All the inventory users have now access to stock.quant editing</li>
+    </ul>
+    <h3>Website</h3>
+    <ul>
+          <li>
+                    <details>
+                    <summary>
+                       The contactus page has been improved so now it is fully customizable and static, which is  also faster.
+                       But your original contactus page is also available, so you should either:<br>
+                        - Keep the new one and delete the back up one (Use 'Contact Us' page)<br>
+                        - If you want to use old 'Contact Us' page (Use 'Contact Us (v15 upgrade backup)' page):
+                    </summary>
+                    <ul><li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=&amp;id=3456">Contact Us (v15 upgrade backup)</a></li><li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=&amp;id=3483">Contact Us (v15 upgrade backup)</a></li><li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=&amp;id=3457">Contact Form (v15 upgrade backup)</a></li><li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=&amp;id=3458">Contact Form (Opportunity) (v15 upgrade backup)</a></li></ul>
+                    </details>
+                </li>
+    </ul>
+    <h3>Filters/Dashboards</h3>
+    <ul>
+        <li><details>
+          <summary>During the upgrade some fields have been removed. The records below have been automatically corrected.</summary>
+          <ul>
+              <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.filters&amp;action=&amp;id=18">Timesheet vs Planning</a>
+          </ul>
+        </details></li>
+    </ul>
+    <h3>Overridden views</h3>
+    <ul>
+        <li><details>
+          <summary>
+            The below standard views have been overridden with their original content during the migration because the changes made in them were no longer valid.
+          </summary>
+          <ul>
+            <li>
+                sale_timesheet.project_task_view_form_inherit_sale_timesheet
+                 
+                <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=1491">Original</a>
+                 
+                <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=3989">Copy</a>
+            </li>
+            <li>
+                sale_timesheet.project_task_view_form_inherit_sale_timesheet_editable
+                 
+                <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=3930">Original</a>
+                 
+                <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=3990">Copy</a>
+            </li>
+            <li>
+                sale_timesheet.hr_timesheet_line_form_inherit
+                 
+                <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=3933">Original</a>
+                 
+                <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=3991">Copy</a>
+            </li>
+            <li>
+                timesheet_grid.timesheet_form_view
+                 
+                <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=1452">Original</a>
+                 
+                <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=3992">Copy</a>
+            </li>
+          </ul>
+        </details></li>
+    </ul>
+    <h3>Jinja upgrade</h3>
+    <ul>
+          <li>
+                    <details>
+                        <summary>
+                            Some of the fields of the table mail_template does not render the same value
+                            before and after being converted.
+                            The mail.template are:
+                        </summary>
+                        <ul><li>id: 2, name: Auth Signup: Reset Password,
+                     fields: <ul><li>body_html</li></ul></li>
+<li>id: 51, name: Ticket: Solved (Custom),
+                     fields: <ul><li>body_html</li></ul></li>
+<li>id: 16, name: Timesheet: Manager Reminder,
+                     fields: <ul><li>body_html</li></ul></li>
+<li>id: 3, name: Auth Signup: Odoo Connection,
+                     fields: <ul><li>body_html</li></ul></li>
+<li>id: 50, name: Ticket: Reception Acknowledgment (Custom),
+                     fields: <ul><li>body_html</li></ul></li>
+<li>id: 48, name: Document Request: Send by email,
+                     fields: <ul><li>body_html</li></ul></li>
+<li>id: 43, name: User: New rank reached,
+                     fields: <ul><li>body_html</li></ul></li>
+<li>id: 49, name: Helpdesk Support Contract: Send Support Contract,
+                     fields: <ul><li>body_html</li></ul></li></ul>
+                    </details>
+                </li>
+    </ul><br/><h2> Congratulations, you have just upgraded to Odoo 16.0 </h2>
+  <p> Here are changes that may impact day to day flows in this new version. </p>
+  <p>Want to know more? Check out the full functional <a href="https://www.odoo.com/odoo-16-release-notes">release note</a>.</p>
+  <br>
+    <h3>Accounting</h3>
+    <ul>
+          <li>
+        <details>
+        <summary>
+            The analytic tags have been removed.
+            Those without distribution have been transformed into analytic accounts to keep the information.
+            They belong to a new plan named 'Former Tag'.
+            If they were linked with Journal Items, analytic items for the new accounts have been created.
+            It concerns the following accounts:
+        </summary>
+        <ul><li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=488">AIPJ2</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=484">AKA</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=485">AKSI/PCM</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=229">AMNT</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=606">AMS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=231">ANS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=648">APG Westkampar</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=542">Abdi Sarana Nusa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=697">Adel</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=224">Adhikarsa Mitra Utama</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=667">Aeroflow Nusantara Abadi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=225">Agriaku</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=226">Agus Kurniawan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=227">Airkon Pratama</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=228">Akper Yatna Yuana</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=702">Akropolis</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=475">Aladin/BNS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=626">Alibaba</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=627">All Data International</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=586">All Rig</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=693">Amacos</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=690">Amartha</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=230">Amreta</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=477">Andaru</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=506">Andritz</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=652">Andro</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=607">Aneka Maju Terus</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=507">Angel</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=513">Angela S</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=428">Angga</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=430">Anggi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=578">Anjar</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=232">Apartemen Permata Safir</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=689">Argo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=449">Arin</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=233">Arista Group</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=234">Arita</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=615">Armindo Mandiri</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=451">Arum</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=235">Arumayya Rekka Daya</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=514">Arya</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=236">Ashapura Bentoclay Fareast</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=237">Aspirasi Buana Alam</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=685">Aston Bogor</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=620">Aston Sentul</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=698">Astra Tech</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=238">Asuka Engineering Indonesia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=705">Aura</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=529">Ausy Embsy</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=510">Ayik</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=612">BAJ</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=241">BATI</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=688">BBI</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=585">BCA</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=483">BIU</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=609">BLP</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=696">BLT</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=642">BNI</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=246">BNS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=447">BPJS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=421">BPT</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=614">BRI</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=567">BTL Indonesia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=239">Badministratorsari Pribumi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=223">Banjarsari Pribumi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=561">Base 7000</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=240">Bass OSL</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=546">Bayu</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=242">Bayu Budi S / Europack</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=565">Berkah Cipta Karya</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=243">Berkeley Energy Indonesia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=549">Besindo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=603">Bhinneka M</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=527">Bina Bangun Wibawa Mukti</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=244">Bina Sarana Sukses</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=245">Bintang Asia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=519">Bonbin</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=557">Brasma Barsama</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=247">Brastique AEON</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=248">Bregwin Indonesia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=552">Budiarto Law Partnership</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=720">Byte Plus</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=249">CAL</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=660">CAS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=250">CCM</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=445">CDP - Ligo grup</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=489">CGL</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=256">CMM</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=476">CMS/Gokart</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=257">CNC DISAIN NUSANTARA</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=658">CSA</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=675">CV. Kalam</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=555">Canda</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=458">Cantya</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=466">Catur</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=251">Chakra Sarana Sentosa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=252">Chandra Consulting</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=574">Cikajang</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=538">Cikarang Inland Port</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=253">Cipta Citra Persada</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=713">Cipta Sarana Sukses Abadi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=254">Citas Konsultan Global</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=564">Citilink</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=426">Citra Cemerlang Mediatama</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=255">Citra Metrojaya Putra</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=543">Citra Surya Selaras</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=258">Como Engineers</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=454">DAP</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=596">DKI / Bikers Motor</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=264">DME</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=265">DPS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=668">Daiwa House Indonesia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=591">Daiwabo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=662">Daiwabo Sheetec Indonesia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=259">Damai Abadi/Alukita</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=572">Damong</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=422">Danmar</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=598">Danpac</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=260">Daruma Mitra Alam</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=655">David</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=261">Deloitte TS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=508">Demas</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=579">DesaMuda</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=597">Devi Mandiri</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=653">Dinar</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=262">Dinasol Industrial</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=263">Diratama Prima Niaga</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=266">Dua Cahaya Anugrah</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=267">Durr SI</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=268">Dwi Caesar</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=432">Egy</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=446">Eight Degrees South</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=269">Eka Cipta Jaya</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=505">Ekrut</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=575">Elmas</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=270">Energi Niaga Utama</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=271">Energi Sterila Higiena</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=272">Ephindo Energy PL</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=664">Esqa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=273">FDC</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=663">Farabee</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=537">Fast</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=631">Feby</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=633">Fipper Slipper</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=435">First Media</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=708">Fitindo Sehat Sempurna</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=274">Formwell Product</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=275">GARUDA VISI NUSANTARA</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=276">GBI Aruna</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=277">GEMILANG INTEGRASI UTAMA</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=280">GLOBAL MEGA VISION</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=284">GPI PRIMASYS SOLUSINDO</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=283">GPI Primasys S</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=593">GPS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=669">Ganesha</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=278">Generasi Bintang</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=518">Gereja Reformasi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=600">Giovartadigitalprint</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=279">Global Inti Profita </a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=281">Global Putra International</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=282">Gloria Mandiri Perkasa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=595">Glorious Interbuana</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=563">GogoMall</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=285">Grafitama Deltakreasi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=712">Graha Ciptayasha</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=286">Graha Citra Prima</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=694">Groovy Petcare</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=611">Gudang Baru</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=287">Gumindo Bogamanis</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=289">HARTONO ISTANA TEKNNOLOGI</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=479">HSA</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=288">Hana Amanda</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=635">Hangin</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=641">Helindo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=616">Honeywell</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=290">Horiguchi Engineering Indonesia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=291">Horizon Geo Consulting</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=706">Hospiniaga</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=544">HosterOne</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=556">Husain</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=292">IBDA</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=293">ICS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=469">IDU</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=498">IKS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=496">IMF-CKE</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=473">IPEBI - Ikatan Pegawai Bank Indonesia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=303">IS Jaya Logistik</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=305">ISF</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=521">Icip Pundi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=294">Ifabula Digital Kreasi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=554">Ikanas</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=719">Ikatan Alumni SMA De Britto</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=472">Ikatan Pegawai BI</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=721">Ima Saraswati</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=559">Imam</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=295">Imeco Inter Sarana</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=509">Inastek</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=511">Indcon - Ima Saraswati</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=577">Indo Prakarsa Jaya</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=296">Indocool Solusi Cemerlang</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=533">Indocyber Global Teknologi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=638">Indogas</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=297">Indokarbon Prima Jaya</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=588">Indolab</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=467">Indomas</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=298">Ineza Medika</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=299">Infoduta Computindo Perkasa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=714">Inggil</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=300">Integra Water Indonesia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=417">Internal</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=630">Interplast</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=301">Inti Data Utama</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=302">Inti Raga Cendekia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=448">Irama Pet</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=304">Isewan Indonesia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=306">Island Food IDN</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=307">J. Arimatea</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=625">J99</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=308">Jaringan Delta Female</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=309">Jati Luhur Agung</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=310">Jessica</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=539">JobStreet</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=311">Jodamo Exchange</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=312">K Link Nusantara</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=316">KBPS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=632">KGI</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=318">KLK Dumai</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=683">KMDI</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=321">KOPKAR Sucofindo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=322">KPBS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=535">KSP</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=605">Karimun Mandiri</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=313">Karya Indah Arthalestari</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=516">Kayan Bahau Listrindo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=314">Kayan Hydropower Nusantara</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=553">Kayan Investama International</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=315">Kayan Putra UC</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=495">Keuskupan Ende</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=654">Kinan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=619">Kitabisa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=317">Klink Nusantara</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=671">Komet</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=319">Kongregasi Suster JMJ</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=651">Kongregasi Suster Suster CB</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=499">Koperasi PT.Telkom</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=320">Kopkar PKT</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=715">Koptegel Kijang Mas</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=621">Kosme</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=617">Kosmo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=440">Kresnaduta Paramarta</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=324">LOA HAUR ENERGY</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=501">LPJ/Larder</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=503">Liandra</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=531">Libra</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=323">Lintas Bara Resources</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=460">Lunar</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=325">MAM CV</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=327">MAV</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=328">MBI</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=459">MCR</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=464">MDR Law Firm</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=330">MELIUM NUSANTARA</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=634">MHG</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=497">MIL</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=580">MKF-Cikajang</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=333">MKS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=517">MSB</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=560">MWR</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=337">MYOB</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=493">Made</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=643">Mandiri</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=684">Mangga Dua</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=682">Marindo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=431">Marquee</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=326">Mascot</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=566">Medivet</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=329">Mega Technology Batam</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=672">Meisei</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=686">Merindo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=602">Merry</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=681">Mesindo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=331">Metro Mataram</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=471">Mitra  Balai Industri</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=461">Mitra International</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=608">Mitra Pony</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=332">Mitrametal Perkasa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=334">Moeladi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=457">Molex</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=335">Monde Mahkota Biskuit</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=550">Murthy Kurnia Utama</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=336">My Republic</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=340">NEC Indonesia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=526">NN</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=343">NVP</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=344">NW</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=661">NW.A</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=717">Nadwin</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=338">Nara</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=339">National Oilwell Varco</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=678">Natour/Injourney</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=707">Nautilus Utama karya</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=341">Necco Manufacturing I</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=583">Newlead</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=640">Newport Marine</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=450">Nilam</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=342">Nipsea Bee Chemical Indonesia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=481">Nirmala Anugerah Sejahtera</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=551">OWJJ JV - JFE</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=345">Odoo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=500">Odyssea</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=623">Opto Lingkar</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=622">Opto Lumbung</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=346">Ordo KS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=347">Oro Ponteggio Indonesia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=613">Otopro</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=492">Oza</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=482">PBMSJ</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=351">PBMSJ</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=590">PDD</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=465">PH&amp;H</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=354">PIEE Indonesia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=355">PIEE Internasional</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=356">PII</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=357">PIS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=358">POTENSI BUMI SAKTI</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=359">PPA Mentari</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=362">PUNINAR</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=348">Pacific Agung Trijaya</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=349">Pan Maritime WP</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=639">Panin</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=418">Pasarnow</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=350">Pazia Pillar Mercyom</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=480">Penta Artha Impresi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=352">Perhimpunan Biarawati Ursulin</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=530">Pesona Nirwana Property</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=353">Petroflexx Prima Daya</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=434">Petty Cash</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=547">Pigeon Baby Lab</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=676">Pincuran Parfum</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=677">Pincuran Parfum</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=548">Pinjaman DAP untuk THR bln April 2023</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=541">Polysius</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=628">Poris Duta Sarana</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=722">Pradowansa - Medivet</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=666">Prasmul</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=528">PreciousNine</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=716">Prima Fitindo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=360">Primatech Computama</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=361">Project Intan Seafood</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=429">Purwaningrum</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=363">Putri Andenia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=644">Quantum Solar Gorontalo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=656">Quantum Teknologi Nusantara</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=367">RSI Singkil Tegal</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=364">Radiant</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=442">Radio Delta Insani</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=444">Radio Swaratama Cicalengka</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=443">Radio kampoeng Gading Media Unggul</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=436">Rajawali Global Asia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=365">Ratu Rosari</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=366">Reethau Energi Nusantara</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=487">Reka - Kopkar</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=512">Reza</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=558">Ridwan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=629">Rivan Agusta</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=520">Royal Safari</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=368">Ryanindon Sentosa Lestari</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=369">SAP </a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=569">SBK</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=371">SBU</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=699">SCCI</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=490">SDM</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=372">SDT</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=523">SDT</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=373">SDT-POS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=375">SEMESTA TEKNOLOGI INFORMATIKA</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=524">SFM</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=378">SGM</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=380">SHIFTY TECH</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=381">SIMU/SBP</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=657">SJMJ/Yayasan Peduli Kasih Yeemye</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=383">SMI</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=687">SMN</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=384">SMP</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=386">SPR Langgak</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=718">SSB</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=387">SSN</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=536">SSP</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=388">STIE Kesatuan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=389">SUBAFOOD Pangan Jaya</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=502">SUI/Gokomodo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=390">SUL</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=486">Sandatex</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=456">Sangra</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=618">Santu Yosef</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=710">Sarana Beton Utama</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=709">Sari Pangan Inti Sejahtera</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=370">Satyo Nugroho</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=594">Scarlet</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=645">Selo Kencana Energi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=374">Semarang Indah Eramoderen</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=376">Seni Budaya Sejahtera</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=587">Sentra Fabrikasi Mekanika</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=377">Sentra Farm</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=420">Server</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=379">Shaw Almex Indonesia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=610">Shinagawa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=592">Shopee</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=646">Sienda</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=423">Simetri Sinergi Indonesi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=382">Smartfren</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=452">Soko</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=385">Solusi Dwi Satya</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=589">Solution</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=691">Somagede</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=636">Startama</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=474">Stechoq</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=433">Stefani</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=725">Subscription Batch Invoicing</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=724">Subscription Payment Exception</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=711">Sugih Lestari</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=478">Sukma</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=637">Sukses Intergra Prima</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=391">Super Teknik</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=392">Surveyor Carbon CI</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=393">Surya Laskar Mandiri</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=394">Surya Wijaya</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=700">Suryapratama</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=395">Sutera Bali</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=540">Syailendra Asia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=397">TATAMETRIKA NUSANTARA</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=601">TDI</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=532">TIS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=399">TMN</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=400">TS Plus</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=455">TSM</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=494">Takatrans</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=396">Tandoor</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=453">Tegas Padang</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=491">Thermalindo Jaya</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=424">Thinq Technology</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=398">Tint Mineral Indonesia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=462">Tirtha Bridal</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=650">Toko Berkat</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=522">Tokopedia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=441">Tomasi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=463">Tomura</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=576">Traveloka</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=581">Tri Reka Handayani</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=470">Trilogi S</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=401">UPS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=402">USFS</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=404">VITA SHOPINDO</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=405">VITALINDO</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=570">Vacpack</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=403">Vendoritel Indonesia Daksatama</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=701">Visero</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=439">Visiintech</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=406">Vuteq Indonesia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=695">WIM</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=723">WMP</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=562">WPC</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=571">Wahyu</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=649">Warung 86</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=692">Weldmax</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=407">Wira Wisesa Pratama Indonesia</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=408">Wiratama Maju Gemilang</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=409">YAKEP</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=412">YAYASAN KNOWLEDGE LINK ISLAMIC SCHOOL</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=414">YCAB</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=415">YPTI</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=679">Yasasan Kartika Eka Paksi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=584">Yay. Ratna Miriam</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=599">Yayasan Carolus Borromeus</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=427">Yayasan Cinta Anak Bangsa</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=410">Yayasan INOTEK</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=568">Yayasan Joseph</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=411">Yayasan Joseph Yeemye</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=680">Yayasan Kartika Eka Paksi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=665">Yayasan Praksis</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=413">Yayasan Rumah Rachel</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=673">Yayasan Sinar Pelangi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=704">Yosefin Chistina</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=545">Yuda Bhakti</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=416">ZEF Energi</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=438">bas</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=703">bpt</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=573">daikin</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=437">dan</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=647">fdc</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=504">ibda</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=468">idu</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=670">indo Online</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=674">injourney</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=525">inter</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=425">nw</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=604">odoo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=515">permata</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=534">quiznosindo</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=582">sdt</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=659">selarasTech</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=419">ser</a></li>
+<li><a target="_blank" href="/web?debug=1#view_type=form&amp;model=account.analytic.account&amp;action=&amp;id=624">sgm</a></li></ul>
+        </details>
+        </li>
+          <li>
+        <details>
+        <summary>
+            The following accounts were either using invalid account codes which were modified during the migration or had the same
+            value as the modified accounts. If there were duplicated codes after cleanup they will have `.dupN` suffix.
+            Please review the changes and correct them if needed.
+            The account codes should now only contain alphanumeric characters and dots.
+        </summary>
+        <ul>
+            <li>'Petty Cash' had its code changed to: 'S.101010' 
+</li><li>'BCA SINERGI 551 IDR' had its code changed to: 'S.101020' 
+</li><li>'BCA SINERGI 777  IDR' had its code changed to: 'S.101030' 
+</li><li>'BANK CIMB IDR' had its code changed to: 'S.101040' 
+</li><li>'BANK CIMB USD' had its code changed to: 'S.101050' 
+</li><li>'BANK BRI IDR' had its code changed to: 'S.101060' 
+</li><li>'BANK BNI IDR' had its code changed to: 'S.101070' 
+</li><li>'BCA SINERGI 196 IDR' had its code changed to: 'S.101080' 
+</li><li>'Cash &amp; Bank Clearing Account' had its code changed to: 'S.101090' 
+</li><li>'OBILGASI' had its code changed to: 'S.101100' 
+</li><li>'Deposito' had its code changed to: 'S.101200' 
+</li><li>'Expense Deposit' had its code changed to: 'S.101250' 
+</li><li>'Account Receivable' had its code changed to: 'S.102010' 
+</li><li>'Inventory In/Out Clearing' had its code changed to: 'S.102021' 
+</li><li>'Allowance for Bad Debt' had its code changed to: 'S.102030' 
+</li><li>'PPN Dalam Negeri - Unslip' had its code changed to: 'S.102040' 
+</li><li>'Other Receivables (IDR)' had its code changed to: 'S.102041' 
+</li><li>'PPh-23 - Unslip' had its code changed to: 'S.1020411' 
+</li><li>'Witholding tax PPh 26' had its code changed to: 'S.1020412' 
+</li><li>'Advance (IDR)' had its code changed to: 'S.102051' 
+</li><li>'VAT-In' had its code changed to: 'S.102060' 
+</li><li>'Employee Loan (IDR)' had its code changed to: 'S.102061' 
+</li><li>'Advance Employee' had its code changed to: 'S.102071' 
+</li><li>'Intercompany Receivable' had its code changed to: 'S.102081' 
+</li><li>'Receivable Clearing Account' had its code changed to: 'S.102085' 
+</li><li>'Due from Multi Ide Luhur, PT' had its code changed to: 'S.102090' 
+</li><li>'Due from J. Arimatea' had its code changed to: 'S.102100' 
+</li><li>'Due from Shareholder' had its code changed to: 'S.102110' 
+</li><li>'Visa' had its code changed to: 'S.102120' 
+</li><li>'Furniture &amp; Fixtures at Cost' had its code changed to: 'S.111010' 
+</li><li>'Computer &amp; Peripherals at Cost' had its code changed to: 'S.111020' 
+</li><li>'Office Equipment at Cost' had its code changed to: 'S.111030' 
+</li><li>'Fixed Asset Clearing Account' had its code changed to: 'S.111990' 
+</li><li>'Scholarship at Cost' had its code changed to: 'S.112010' 
+</li><li>'Pre Operating at Cost' had its code changed to: 'S.112030' 
+</li><li>'SAP at Cost (License SAP)' had its code changed to: 'S.112040' 
+</li><li>'Microsoft License' had its code changed to: 'S.112050' 
+</li><li>'Furniture &amp; Fixtures Accum Dep' had its code changed to: 'S.113010' 
+</li><li>'Computer &amp; Peripherals Acc Dep' had its code changed to: 'S.113020' 
+</li><li>'Office Equipment Acc Depr' had its code changed to: 'S.113030' 
+</li><li>'Accum. Scholarship at Cost' had its code changed to: 'S.113040' 
+</li><li>'Accum. Adv and Promotion' had its code changed to: 'S.113050' 
+</li><li>'Accum. Amort. Pre Operating at Cost' had its code changed to: 'S.113060' 
+</li><li>'Accum. Amort. SAP at Cost (License SAP)' had its code changed to: 'S.113070' 
+</li><li>'Accum. Amort. Microsoft License' had its code changed to: 'S.113080' 
+</li><li>'Investment on Subsidiary' had its code changed to: 'S.114010' 
+</li><li>'Invesment' had its code changed to: 'S.114020' 
+</li><li>'Prepaid Expense' had its code changed to: 'S.121010' 
+</li><li>'Prepaid Insurance' had its code changed to: 'S.121020' 
+</li><li>'Prepaid Pph 21' had its code changed to: 'S.122020' 
+</li><li>'Prepaid Pph 23' had its code changed to: 'S.122030' 
+</li><li>'Prepaid Pph 25' had its code changed to: 'S.122050' 
+</li><li>'Prepaid PPH 22' had its code changed to: 'S.122090' 
+</li><li>'VAT Offshore' had its code changed to: 'S.122100' 
+</li><li>'Inventory' had its code changed to: 'S.131010' 
+</li><li>'Non Current Assets' had its code changed to: 'S.151010' 
+</li><li>'Inter Bank /transfer' had its code changed to: 'S.1999999' 
+</li><li>'Account Payable' had its code changed to: 'S.201010' 
+</li><li>'Unbilled Payable' had its code changed to: 'S.201022' 
+</li><li>'Down Payment &amp; Customer Deposit' had its code changed to: 'S.201030' 
+</li><li>'Due to Shareholder's (IDR)' had its code changed to: 'S.201051' 
+</li><li>'Due to Third Parties' had its code changed to: 'S.201061' 
+</li><li>'Intercompany Payable' had its code changed to: 'S.201070' 
+</li><li>'Payable Clearing Account' had its code changed to: 'S.201090' 
+</li><li>'Tax Payable' had its code changed to: 'S.202010' 
+</li><li>'VAT-Out' had its code changed to: 'S.202020' 
+</li><li>'VAT-Out WAPU' had its code changed to: 'S.202021' 
+</li><li>'VAT - Over / Under' had its code changed to: 'S.202040' 
+</li><li>'Corporate Income Tax Payable' had its code changed to: 'S.202050' 
+</li><li>'Tax Payable Art 21' had its code changed to: 'S.202060' 
+</li><li>'Withholding Tax Art 23' had its code changed to: 'S.202070' 
+</li><li>'Withholding Tax Art 4(2)' had its code changed to: 'S.202071' 
+</li><li>'Withholding Tax Art 26' had its code changed to: 'S.202080' 
+</li><li>'Allowance-Corporate Inc. Tax' had its code changed to: 'S.202800' 
+</li><li>'Import Duty Payable (IDR)' had its code changed to: 'S.203021' 
+</li><li>'Jamsostek Payable' had its code changed to: 'S.2030221' 
+</li><li>'Other Current Liabilities (IDR)' had its code changed to: 'S.203031' 
+</li><li>'Accrued Rent (IDR)' had its code changed to: 'S.211011' 
+</li><li>'Accrued Salaries' had its code changed to: 'S.211020' 
+</li><li>'Accrued Telephone' had its code changed to: 'S.211030' 
+</li><li>'Accrued Electricity' had its code changed to: 'S.211040' 
+</li><li>'Accrued Marketing Expenses' had its code changed to: 'S.211060' 
+</li><li>'Accrued Production Cost' had its code changed to: 'S.211070' 
+</li><li>'Accrued Expenses' had its code changed to: 'S.211071' 
+</li><li>'Accrued Insurance' had its code changed to: 'S.211072' 
+</li><li>'Accrued Other' had its code changed to: 'S.211080' 
+</li><li>'Bank Loans (IDR)' had its code changed to: 'S.221011' 
+</li><li>'Other Long Term Liabilities (IDR)' had its code changed to: 'S.221051' 
+</li><li>'Joseph Arimatea' had its code changed to: 'S.300010' 
+</li><li>'Multi Ide Luhur, PT' had its code changed to: 'S.300020' 
+</li><li>'Agus Kurniawan' had its code changed to: 'S.300030' 
+</li><li>'Jessica' had its code changed to: 'S.300040' 
+</li><li>'Historical Balance' had its code changed to: 'S.3000401' 
+</li><li>'Dynamic Advantage Partnerindo, PT' had its code changed to: 'S.300050' 
+</li><li>'Retained Earning' had its code changed to: 'S.310010' 
+</li><li>'Undistributed Profits/Losses' had its code changed to: 'S.310020' 
+</li><li>'Dividends' had its code changed to: 'S.310025' 
+</li><li>'Reserve and Profit/Loss Account' had its code changed to: 'S.310030' 
+</li><li>'Product Sales' had its code changed to: 'S.410010' 
+</li><li>'Sales Service' had its code changed to: 'S.410020' 
+</li><li>'Discount Product' had its code changed to: 'S.420010' 
+</li><li>'Discount Consulting' had its code changed to: 'S.420020' 
+</li><li>'Marketing Expenses' had its code changed to: 'S.420040' 
+</li><li>'Opening Income Account' had its code changed to: 'S.499900' 
+</li><li>'Product Cost' had its code changed to: 'S.500010' 
+</li><li>'Freight-In' had its code changed to: 'S.500020' 
+</li><li>'Freight-Out' had its code changed to: 'S.500030' 
+</li><li>'Bea Cukai' had its code changed to: 'S.500040' 
+</li><li>'Import Duty' had its code changed to: 'S.500050' 
+</li><li>'Variance of COGS' had its code changed to: 'S.501010' 
+</li><li>'Variance of Inventory' had its code changed to: 'S.501020' 
+</li><li>'Man Power Cost' had its code changed to: 'S.510001' 
+</li><li>'Salaries &amp; Allowances' had its code changed to: 'S.510010' 
+</li><li>'Tax Expenses (PPh21)' had its code changed to: 'S.510020' 
+</li><li>'Bonus' had its code changed to: 'S.510030' 
+</li><li>'Jamsostek Cost' had its code changed to: 'S.510040' 
+</li><li>'Medical &amp; Employee Insurance' had its code changed to: 'S.510050' 
+</li><li>'Training/Seminar/Education' had its code changed to: 'S.510060' 
+</li><li>'Official Trip' had its code changed to: 'S.510070' 
+</li><li>'Subcontracting' had its code changed to: 'S.510080' 
+</li><li>'Direct Production Cost' had its code changed to: 'S.510090' 
+</li><li>'Printing &amp; Stationary' had its code changed to: 'S.510100' 
+</li><li>'Transportation Cost' had its code changed to: 'S.510110' 
+</li><li>'Legalitation &amp; Permition' had its code changed to: 'S.510120' 
+</li><li>'Reimbursement Alokasi Biaya' had its code changed to: 'S.510130' 
+</li><li>'Salary Expenses' had its code changed to: 'S.600010' 
+</li><li>'Personel Charges And Staff Amenities' had its code changed to: 'S.600015' 
+</li><li>'Bonuses' had its code changed to: 'S.600020' 
+</li><li>'Jamsostek' had its code changed to: 'S.600030' 
+</li><li>'Medical &amp; Employee Insurance' had its code changed to: 'S.600040' 
+</li><li>'Training / Seminar / Education' had its code changed to: 'S.600050' 
+</li><li>'Official Trip' had its code changed to: 'S.600060' 
+</li><li>'Office Supplies &amp; Printing' had its code changed to: 'S.610010' 
+</li><li>'Repairs &amp; Maintenance' had its code changed to: 'S.610020' 
+</li><li>'Transportation' had its code changed to: 'S.610030' 
+</li><li>'Telephone &amp; Internet' had its code changed to: 'S.610040' 
+</li><li>'Legal &amp; Permit' had its code changed to: 'S.610050' 
+</li><li>'Mail/Postage' had its code changed to: 'S.610060' 
+</li><li>'Retribution' had its code changed to: 'S.610070' 
+</li><li>'Entertainment' had its code changed to: 'S.610080' 
+</li><li>'Bank Charges' had its code changed to: 'S.610090' 
+</li><li>'Bad Debt Expenses' had its code changed to: 'S.610100' 
+</li><li>'Office Rent' had its code changed to: 'S.610110' 
+</li><li>'Electricity' had its code changed to: 'S.610120' 
+</li><li>'Water' had its code changed to: 'S.610130' 
+</li><li>'Pantry &amp; F/B' had its code changed to: 'S.610140' 
+</li><li>'Office Expense' had its code changed to: 'S.610150' 
+</li><li>'Other Expenses' had its code changed to: 'S.610190' 
+</li><li>'Tax Expenses - PPh 21' had its code changed to: 'S.620010' 
+</li><li>'PPN Luar Negeri' had its code changed to: 'S.620020' 
+</li><li>'Depreciation Furniture' had its code changed to: 'S.630010' 
+</li><li>'Depr Computer &amp; Peripherals' had its code changed to: 'S.630020' 
+</li><li>'Depr. Office Equipment' had its code changed to: 'S.630030' 
+</li><li>'Amort. SAP (License SAP)' had its code changed to: 'S.630040' 
+</li><li>'Amort. Adv and Promotion' had its code changed to: 'S.630050' 
+</li><li>'Amort. Scholarship' had its code changed to: 'S.630060' 
+</li><li>'Amort. Pre Operating' had its code changed to: 'S.630070' 
+</li><li>'Amort. Microsoft License' had its code changed to: 'S.630080' 
+</li><li>'Unrealized Gain or Loss' had its code changed to: 'S.700010' 
+</li><li>'Realized Gain' had its code changed to: 'S.700020' 
+</li><li>'Realized Loss' had its code changed to: 'S.700025' 
+</li><li>'Interest Income &amp; Expenses' had its code changed to: 'S.700030' 
+</li><li>'PPh 21' had its code changed to: 'S.800010' 
+</li><li>'PPh 23' had its code changed to: 'S.800020' 
+</li><li>'Pajak Ps 4(2)' had its code changed to: 'S.800030' 
+</li><li>'PPh 25' had its code changed to: 'S.800040' 
+</li><li>'Pajak Bumi dan Bangunan' had its code changed to: 'S.800050' 
+</li><li>'PPh Final' had its code changed to: 'S.800060' 
+</li><li>'Tax Penalty' had its code changed to: 'S.800070' 
+</li><li>'Other Income' had its code changed to: 'S.811040' 
+</li><li>'Undistributed Profit Loss' had its code changed to: 'S.9999999' 
+        </li></ul>
+        </details>
+        </li>
+    </ul>
+    <h3>Filters/Dashboards</h3>
+    <ul>
+        <li><details>
+          <summary>During the upgrade some fields have been removed. The records below have been automatically corrected.</summary>
+          <ul>
+              <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.filters&amp;action=&amp;id=11">{'en_US': 'Analytic Account - Journal Items'}</a>
+              <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.filters&amp;action=&amp;id=53">{'en_US': 'SLA Status Analysis'}</a>
+          </ul>
+        </details></li>
+    </ul>
+    <h3>Financial Reports</h3>
+    <ul>
+          <li>
+                <details>
+                    <summary>
+                        Due to a complete revamp of the reporting engine in Odoo 16, custom financial reports are not migrated by
+                        default.
+                        The general suggestion is to try to fallback on the new capabilities of the standard reports, and recreate
+                        your reports from scratch, if necessary.
+                        However, if this would be too inconvenient, there is a possibility that opening a support ticket might help,
+                        based on your specific case.
+                        The custom financial reports that are being lost in this migration are the following ones:
+                    </summary>
+                    <ul><li>Profit and Loss Analytic (id: 4)</li> <li>Executive Summary (copy) (id: 5)</li> <li>Balance Sheet (copy) (id: 6)</li></ul>
+                </details>
+            </li>
+    </ul>
+    <h3>Disabled views</h3>
+    <ul>
+        <li><details>
+          <summary>
+            The below custom views have been disabled during the migration because they were no longer valid.
+          </summary>
+          <ul>
+            <li>
+                  <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=3251">Odoo Studio: helpdesk.ticket.tree customization</a>
+            </li>
+            <li>
+                  <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=3127">Odoo Studio: project.project.tree customization</a>
+            </li>
+          </ul>
+        </details></li>
+    </ul>
+    <h3>Overridden views</h3>
+    <ul>
+        <li><details>
+          <summary>
+            The below standard views have been overridden with their original content during the migration because the changes made in them were no longer valid.
+          </summary>
+          <ul>
+            <li>
+                sale_timesheet.hr_timesheet_line_form_inherit
+                &nbsp;
+                <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=3933">Original</a>
+                &nbsp;
+                <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=4481">Copy</a>
+            </li>
+            <li>
+                timesheet_grid.timesheet_form_view
+                &nbsp;
+                <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=1452">Original</a>
+                &nbsp;
+                <a target="_blank" href="/web?debug=1#view_type=form&amp;model=ir.ui.view&amp;action=28&amp;id=4482">Copy</a>
+            </li>
+          </ul>
+        </details></li>
+    </ul>
+</body>
+</html>
